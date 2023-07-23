@@ -2,7 +2,7 @@ name: workspace deployment
 
 on:
     push:
-        branches: main
+        branches: workspace_publish
 jobs:
     release:
         # You also can use the self-hosted runners.
@@ -13,14 +13,13 @@ jobs:
         - uses: azure/synapse-workspace-deployment@release-1.0
         with:
           TargetWorkspaceName: 'target workspace name'
-          TemplateFile: './path of the TemplateForWorkspace.json'
-          ParametersFile: './path of the TemplateParametersForWorkspace.json'
-          OverrideArmParameters: './path of the parameters.yaml'
+          TemplateFile: './cicddemo/TemplateForWorkspace.json'
+          ParametersFile: './cicddemo/TemplateParametersForWorkspace.json'
           environment: 'Azure Public'
-          resourceGroup: 'target workspace resource group'
+          resourceGroup: 'DataEngineer'
           clientId: ${{secrets.CLIENTID}}
           clientSecret:  ${{secrets.CLIENTSECRET}}
-          subscriptionId: 'subscriptionId of the target workspace'
-          tenantId: 'tenantId'
+          subscriptionId: 'b36625e9-5631-467e-97b9-752881063bba'
+          tenantId: '91f820e7-a557-448d-8ccf-c7452516ce24'
           DeleteArtifactsNotInTemplate: 'true'
           managedIdentity: 'False'
