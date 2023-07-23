@@ -28,7 +28,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Wait23",
+						"name": "Wait231",
 						"type": "Wait",
 						"dependsOn": [],
 						"userProperties": [],
